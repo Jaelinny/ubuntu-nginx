@@ -356,11 +356,19 @@ root@605f051fe7d1:/# nginx -v
 nginx version: nginx/1.18.0 (Ubuntu)
 ```
 
-### 4. (1), (2), (3) 과정 기록
-- README.md
+### 4. 
+```
+$ sudo docker ps
+CONTAINER ID   IMAGE          COMMAND       CREATED          STATUS          PORTS     NAMES
+605f051fe7d1   ubuntu:22.04   "/bin/bash"   18 minutes ago   Up 18 minutes             ubuntu-nginx-d
+
+$ sudo docker commit ubuntu-nginx-d ubuntu-nginx-d:0.1.0
+
+$ sudo docker run -itd --name ubuntu-nginx-1 -p 8888:80 ubuntu-nginx-d:0.1.0
+```
 
 
-### 5. (4) 의 기록을 바탕으로 Dockerfile 생성
+### 5. Dockerfile 생성
 - build & push
 ```
 $ pwd
