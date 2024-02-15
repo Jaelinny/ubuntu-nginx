@@ -373,6 +373,17 @@ $ sudo docker run -itd --name ubuntu-nginx-1 -p 8888:80 ubuntu-nginx-d:0.1.0
 ```
 $ pwd
 /home/jelly/code/ubuntu-nginx
+
+$ cd etc
+$ vi Dockerfile
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 80
+
+$ pwd
+/home/jelly/code/ubuntu-nginx
 .
 ├── README.md
 └── etc
