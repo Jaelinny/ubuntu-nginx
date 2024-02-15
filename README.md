@@ -361,8 +361,18 @@ nginx version: nginx/1.18.0 (Ubuntu)
 
 
 ### 5. (4) 의 기록을 바탕으로 Dockerfile 생성
-
+- build & push
 ```
-```
+$ pwd
+/home/jelly/code/ubuntu-nginx
+.
+├── README.md
+└── etc
+    ├── Dockerfile
+    ├── nginx
+    └── nginx.conf
 
-### step
+$ cd etc
+$ sudo docker build -t taengguu/ubuntu-nginx-d:0.1.0 .
+$ sudo docker push taengguu/ubuntu-nginx-d:0.1.0
+```
